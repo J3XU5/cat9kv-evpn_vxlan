@@ -1,4 +1,8 @@
 - name: "Configure l3 int on Leafs"
+  cisco.ios.ios_interfaces:
+    config:
+      - name: "{{ item.name }}"
+        mode: layer3
   cisco.ios.ios_l3_interfaces:
     config:
       - name: "{{ item.name }}"
