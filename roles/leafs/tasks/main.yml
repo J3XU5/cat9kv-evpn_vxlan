@@ -1,11 +1,11 @@
 - name: "Configure l2 int on Leafs"
   cisco.ios.ios_l2_interfaces:
     config:
-      -  name: "{{  item.name  }}"
+      - name: "{{  item.name  }}"
         mode: access
-      access:
-        vlan: "{{  item.vlan_id  }}"
-  loop: l2_interfaces
+        access:
+          vlan: "{{  item.vlan_id  }}"
+  loop: "{{  l2_interfaces  }}"
 
 - name: "Configure l3 int on Leafs"
   cisco.ios.ios_l3_interfaces:
@@ -13,4 +13,4 @@
       - name: "{{ item.name }}"
         ipv4:
           address:  "{{ item.address }}/{{ item.mask }}"
-    loop: l3_interfaces
+  loop: "{{  l3_interfaces  }}"
