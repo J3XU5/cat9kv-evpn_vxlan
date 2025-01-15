@@ -9,4 +9,3 @@
             ipv4:
               address:  "{{ item.l3_interfaces.address }}/{{ item.l3_interfaces.mask }}"
       loop: interfaces
-            
