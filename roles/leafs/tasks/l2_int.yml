@@ -1,0 +1,8 @@
+- name: "Configure l2 int on Leafs"
+  cisco.ios.ios_l2_interfaces:
+    config:
+      - name: "{{  item.name  }}"
+        mode: access
+        access:
+          vlan: "{{  item.vlan_id  }}"
+  loop: "{{  l2_interfaces  }}"
