@@ -1,9 +1,11 @@
-- name: "Disabling switchport"
+- name: "Disabling switchport and changing mtu"
   cisco.ios.ios_interfaces:
     config:
       - name: "{{ item.name }}"
         mode: layer3
+        mtu: 9000
   loop: "{{  l3_interfaces  }}"
+  when: item.name is search("Gigabit")
 
 - name: "Adding ipv4 address"
   cisco.ios.ios_l3_interfaces:
