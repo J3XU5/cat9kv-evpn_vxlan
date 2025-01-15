@@ -1,0 +1,8 @@
+- name: Configure all leafs
+  hosts: leafs
+  roles: 
+    - leafs
+- name: Configure all spines
+  hosts: spines
+  roles: 
+    - spines
