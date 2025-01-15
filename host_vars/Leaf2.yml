@@ -1,5 +1,5 @@
 l3_interfaces:
-  - name: GigabitEthernet1/0/2
+  - name: GigabitEthernet1/0/1
     address: 192.168.2.2
     mask: 24
   - name: Loopback0

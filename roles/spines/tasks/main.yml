@@ -1,3 +1,1 @@
-- name: "Show version"
-  cisco.ios.ios_command:
-        commands: show version
+- import_tasks: l3_int.yml
