@@ -1,0 +1,12 @@
+- name: "Configure l3 int on Leafs"
+  hosts: leafs
+  gather_facts: no 
+  
+  tasks:
+    -  cisco.ios.ios_l3_interfaces:
+        config:
+          - name: "{{ item.l3_interfaces.name }}"
+            ipv4:
+              address:  "{{ item.l3_interfaces.address }}/{{ item.l3_interfaces.mask }}"
+      loop: interfaces
+            
