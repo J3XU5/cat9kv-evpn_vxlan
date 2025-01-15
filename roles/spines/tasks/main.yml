@@ -1,7 +1,3 @@
-- name: "Configure l2 int on Leafs"
-  hosts: spines
-  gather_facts: no 
-  
-  tasks:
-    - cisco.ios.ios_command:
+- name: "Show version"
+  cisco.ios.ios_command:
         commands: show version
