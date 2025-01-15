@@ -1,12 +1,14 @@
----
+leafs:
+  hosts:
+    leaf1:
+      ansible_host: 192.168.0.118
+    leaf2:
+      ansible_host: 192.168.0.119 
 
-hosts:
-  leafs:
-    192.168.0.119
-    192.168.0.120
-  spines:
-    192.168.0.118
-
+spines:
+  hosts:
+    spine1:
+      ansible_host: 192.168.0.120
 
 all:
   vars:
