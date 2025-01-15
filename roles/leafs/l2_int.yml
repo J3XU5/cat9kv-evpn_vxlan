@@ -5,11 +5,8 @@
   tasks:
     -  cisco.ios.ios_l2_interfaces:
         config:
-          - name: GigabitEthernet1/0/7
+          - name: "{{  item.l2_interfaces.name  }}"
             mode: access
             access:
-              vlan: 10
-          - name: GigabitEthernet1/0/8
-            mode: access
-            access:
-              vlan: 20
+              vlan: "{{  item.l2_interfaces.vlan_id  }}"
+        loop: l2_interfaces

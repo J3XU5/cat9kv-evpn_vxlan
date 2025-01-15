@@ -5,3 +5,9 @@ l3_interfaces:
   - name: Loopback0
     address: 10.0.0.1
     mask: 32
+
+l2_interfaces:
+  - name: GigabitEthernet1/0/7
+    vlan_id: 10
+  - name: GigabitEthernet1/0/8
+    vlan_id: 20
