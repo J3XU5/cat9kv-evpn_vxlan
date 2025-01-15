@@ -1,8 +1,11 @@
-- name: "Configure l3 int on Leafs"
+- name: "Disabling switchport"
   cisco.ios.ios_interfaces:
     config:
       - name: "{{ item.name }}"
         mode: layer3
+  loop: "{{  l3_interfaces  }}"
+
+- name: "Adding ipv4 address"
   cisco.ios.ios_l3_interfaces:
     config:
       - name: "{{ item.name }}"
